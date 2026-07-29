@@ -272,8 +272,8 @@ footer .attribution a:hover { color: var(--link-hover); }
             今天的主线是<strong>「衡量尺度正在换轴」</strong>——swyx 断言「每 token 多少钱」作为成本指标去年就已死亡，该看的是<strong>每完成一个任务多少钱</strong>；Vercel 用同一把尺子重排了安全模型性价比；Box CEO 则用招聘数据反驳「AI 消灭岗位」，并点出企业开始<strong>自建内部 FDE</strong>。播客里 Granola 创始人给出更长的视角：会议记录不是终点，真正的仗在「AI 原生时代用什么界面工作」。
         </p>
         <div class="meta reveal">
-            <span class="chip"><span class="dot">●</span> 14 位 Builder</span>
-            <span class="chip"><span class="dot">●</span> 29 条推文</span>
+            <span class="chip"><span class="dot">●</span> 16 位 Builder</span>
+            <span class="chip"><span class="dot">●</span> 29 条推文 + 自维护源</span>
             <span class="chip"><span class="dot">●</span> 1 期播客</span>
             <span class="chip"><span class="dot">●</span> 来源已校验</span>
         </div>
@@ -477,6 +477,66 @@ footer .attribution a:hover { color: var(--link-hover); }
     <section class="section">
         <div class="section-head">
             <span class="num">04</span>
+            <h2>🎯 FDE 追踪</h2>
+        </div>
+        <p class="section-sub">本节来自碳基人自维护信源(独立于中央 feed),首次并入。聚焦「模型之外,交付怎么做」。</p>
+
+        <article class="builder">
+            <div class="builder-head">
+                <span class="builder-name">Ode with Anthropic</span>
+                <span class="builder-role">Anthropic + Blackstone 的 15 亿美元 AI 实施公司 · 官方</span>
+            </div>
+            <p class="builder-body">
+                这家公司的定位一句话说完:<em>「Frontier AI, meets reality.」</em>——100 人的 FDE(前沿部署工程师)团队直接驻进企业客户内部。他们发了一组<strong>「Ode 内部 Slack 里偷听到的」</strong>,按岗位署名讲真实客户交付里的体感,比行业分析文章有用得多:
+            </p>
+            <ul class="pod-points">
+                <li>
+                    <span class="tag">工程 · Youssef</span>
+                    <em>「我让它做个 Datadog 看板,结果那个集成不存在——它就自己开了浏览器,从 UI 里把看板建出来了。」</em>
+                </li>
+                <li>
+                    <span class="tag">工程 · Lauren</span>
+                    <em>「Claude Tag 的进度回报终于短到:周五启动的长任务,我能用手机在给孩子做早餐时推进几下,周一直接就绪。」</em>——<strong>这正是「异步委派」在真实交付节奏里的样子</strong>。
+                </li>
+                <li>
+                    <span class="tag">商务 · Neil</span>
+                    <em>「第一次读模型起草的跟进邮件时觉得:这基本可以直接发。AI 味少了,而且做深度调研时它会给凭据——引文、链接、它真正读过的材料,而不是把一切总结掉、把线索丢了。」</em>
+                </li>
+                <li>
+                    <span class="tag">产品 · Andy</span>
+                    把<strong>客户会谈转写稿直接合成成 PRD 的章节</strong>——和你手上 FDE demo 想做的那条链路完全同向。
+                </li>
+            </ul>
+            <div class="links">
+                <a class="src" href="https://x.com/OdeDevs/status/2080738865065927124" target="_blank" rel="noopener"><span class="arrow">→</span><span class="url-text">x.com/OdeDevs · Slack 偷听系列开篇</span></a>
+                <a class="src" href="https://x.com/OdeDevs/status/2080738871940460613" target="_blank" rel="noopener"><span class="arrow">→</span><span class="url-text">x.com/OdeDevs · 自己开浏览器建看板</span></a>
+                <a class="src" href="https://x.com/OdeDevs/status/2080738870862524734" target="_blank" rel="noopener"><span class="arrow">→</span><span class="url-text">x.com/OdeDevs · 手机推进长任务</span></a>
+                <a class="src" href="https://x.com/OdeDevs/status/2080738869147037876" target="_blank" rel="noopener"><span class="arrow">→</span><span class="url-text">x.com/OdeDevs · 会给凭据的深度调研</span></a>
+                <a class="src" href="https://x.com/OdeDevs/status/2080738873047658732" target="_blank" rel="noopener"><span class="arrow">→</span><span class="url-text">x.com/OdeDevs · 转写稿转 PRD</span></a>
+            </div>
+        </article>
+
+        <article class="builder">
+            <div class="builder-head">
+                <span class="builder-name">Nabeel S. Qureshi</span>
+                <span class="builder-role">Palantir 八年 FDE · 《Reflections on Palantir》作者</span>
+            </div>
+            <p class="builder-body">
+                <strong>一条该贴在墙上的提醒:榜单变好,不等于模型真变聪明。</strong>
+                <em>「显而易见但值得说:人们看到这些曲线,就假定 AI 本身变得极其聪明了。实际上是实验室决定要爬『这一个』特定指标,然后去采购、训练任何能帮他们爬上去的数据。这是两件不同的事。」</em>
+                他还转了一条与之呼应的实测:<em>「在我们最新颖的那个游戏上(那种无法靠模式匹配的异常机制组合),Opus 5 退步到了 Opus 4.8 以下。凡是规则必须通过交互去『发现』的地方,新模型比旧模型更差。」</em>
+                <strong>对做交付的人这条很实用</strong>:客户场景恰恰是「规则得现场摸出来」的地方,别拿榜单分数当交付能力的证明。
+            </p>
+            <div class="links">
+                <a class="src" href="https://x.com/nabeelqu/status/2080727101607399593" target="_blank" rel="noopener"><span class="arrow">→</span><span class="url-text">x.com/nabeelqu · 榜单是被选出来爬的</span></a>
+                <a class="src" href="https://x.com/nabeelqu/status/2081037770932293738" target="_blank" rel="noopener"><span class="arrow">→</span><span class="url-text">x.com/nabeelqu · 需要发现规则时新模型更差</span></a>
+            </div>
+        </article>
+    </section>
+
+    <section class="section">
+        <div class="section-head">
+            <span class="num">05</span>
             <h2>今日播客</h2>
         </div>
         <p class="section-sub">深度对谈的核心洞察提炼。</p>
